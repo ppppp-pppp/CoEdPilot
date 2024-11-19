@@ -6,7 +6,7 @@ This script was adapted from the original version by hieuhoang1972 which is part
 
 # $Id: bleu.py 1307 2007-03-14 22:22:36Z hieuhoang1972 $
 
-'''Provides:
+'''Provides:这些注释描述了脚本提供的四个主要函数及其作用
 
 cook_refs(refs, n=4): Transform a list of reference sentences as strings into a form usable by cook_test().
 cook_test(test, refs, n=4): Transform a test sentence as a string (together with the cooked reference sentences) into a form usable by score_cooked().
