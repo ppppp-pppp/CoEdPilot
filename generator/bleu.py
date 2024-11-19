@@ -66,7 +66,7 @@ def normalize(s): #这个 normalize 函数通过这些步骤，确保了文本�
     return s.split()  #最后，将预处理后的文本分割成单词列表并返回。
 
 def count_ngrams(words, n=4): #四个连续（4个单词或4个字母）项目的出现概率
-    counts = {}
+    counts = {} 
     for k in range(1,n+1):
         for i in range(len(words)-k+1): #len(words)-k+1 确保在每次迭代中都能形成一个长度为 k 的序列。
             ngram = tuple(words[i:i+k])
@@ -134,7 +134,7 @@ def score_cooked(allcomps, n=4, ground=0, smooth=1): #这个函数计算经过�
         addsmooth = 1
       logbleu += math.log(correct + addsmooth + sys.float_info.min)-math.log(guess + addsmooth+ sys.float_info.min)
       if guess == 0:
-        all_bleus.append(-10000000)
+        all_bleus.append(-10000000) #避免使用魔术数字，例如在score_cooked函数中的-10000000，应该定义为一个常量。BLEU_MIN_VALUE = -10000000
       else:
         all_bleus.append(math.log(correct + sys.float_info.min)-math.log( guess ))
 
