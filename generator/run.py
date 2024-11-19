@@ -1,3 +1,5 @@
+#这段代码是一个用于训练和评估基于PyTorch的序列到序列（Seq2Seq）模型的脚本，它使用了Roberta模型作为编码器和Transformer解码器。
+
 # coding=utf-8
 from __future__ import absolute_import
 import os
