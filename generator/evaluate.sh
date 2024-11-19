@@ -1,3 +1,4 @@
+#这段代码看起来是一个用于运行机器翻译或文本生成任务的命令行脚本，具体来说是用于测试一个预训练的模型。
 lang=typescript #programming language
 beam_size=10
 batch_size=20
