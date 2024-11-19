@@ -1,3 +1,6 @@
+#这段代码是一个基于PyTorch框架的序列到序列（Seq2Seq）模型的实现，它包含了编码器（encoder）和解码器（decoder）的结构。
+#Seq2Seq模型通常用于机器翻译、文本摘要等任务，其核心思想是将输入序列编码成一个固定长度的向量，然后解码器根据这个向量生成输出序列。
+
 # Copyright (c) Microsoft Corporation. 
 # Licensed under the MIT license.
 
@@ -25,7 +28,7 @@ class Seq2Seq(nn.Module):
         self.encoder = encoder
         self.decoder=decoder
         self.config=config
-        self.register_buffer("bias", torch.tril(torch.ones(2048, 2048)))
+        self.register_buffer("bias", torch.tril(torch.ones(2048, 2048))) #注册一个buffer，用于在解码时防止解码器生成重复的词。
         self.dense = nn.Linear(config.hidden_size, config.hidden_size)
         self.lm_head = nn.Linear(config.hidden_size, config.vocab_size, bias=False)
         self.lsm = nn.LogSoftmax(dim=-1)
